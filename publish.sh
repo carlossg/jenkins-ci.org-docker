@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/bash -eux
 
 # Publish any versions of the docker image not yet pushed to jenkinsci/jenkins
 # Arguments:
