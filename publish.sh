@@ -31,7 +31,7 @@ docker-tag() {
 
 get-variant() {
     local branch
-    branch=$(git show-ref | grep $(git rev-list -n 1 HEAD) | tail -1 | rev | cut -d/ -f 1 | rev)
+    branch=master
     if [ -z "$branch" ]; then
         >&2 echo "Could not get the current branch name for commit, not in a branch?: $(git rev-list -n 1 HEAD)"
         return 1
@@ -160,8 +160,8 @@ publish-lts() {
 
 # Process arguments
 
-dry_run=false
-debug=false
+dry_run=true
+debug=true
 
 while [[ $# -gt 0 ]]; do
     key="$1"
